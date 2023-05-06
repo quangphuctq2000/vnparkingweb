@@ -1,10 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <LoadingView v-if="isLoading"></LoadingView>
+
+  <router-view></router-view>
 </template>
+
+<script lang="ts" setup>
+import { computed } from "vue";
+import { useAppStore } from "./store";
+import LoadingView from "@/components/LoadingView.vue";
+const appStore = useAppStore();
+const isLoading = computed(() => appStore.isLoading);
+</script>
 
 <style lang="scss">
 #app {

@@ -10,10 +10,17 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "firebase": "^9.21.0",
+    "pinia": "^2.0.35",
+    "vee-validate": "^4.8.6",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuefire": "^3.1.0",
+    "vuetify": "^3.2.2",
+    "vuex": "^4.0.0",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
@@ -75,6 +82,9 @@
     "not ie 11"
   ],
   "jest": {
-    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }

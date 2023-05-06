@@ -1,18 +1,14 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <v-layout>
+    <PageHeader />
+    <PageNavigationDrawer />
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-layout>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class HomeView extends Vue {}
+<script setup lang="ts">
+import PageHeader from "@/components/PageHeader.vue";
+import PageNavigationDrawer from "@/components/PageNavigationDrawer.vue";
 </script>

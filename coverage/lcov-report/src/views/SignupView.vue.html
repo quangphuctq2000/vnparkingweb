@@ -1,0 +1,325 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/views/SignupView.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/views</a> SignupView.vue</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">13.47% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>19/141</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">18.69% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>20/107</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">2.56% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/39</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">14.06% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>18/128</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div
+    class="d-flex align-center justify-center h-screen bg-blue-grey-lighten-5 p-2"
+  &gt;
+    &lt;v-card width="600" class="bg-blue-darken-4"&gt;<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      &lt;template v-slot:t<span class="cstat-no" title="statement not covered" >itle&gt;SIG</span></span>NUP&lt;/template&gt;
+<span class="cstat-no" title="statement not covered" >      &lt;v-form fast-fail @submit.prevent="onSubmit()"&gt;</span>
+        &lt;v-sheet&gt;
+<span class="fstat-no" title="function not covered" >          &lt;</span>v-text-field
+<span class="cstat-no" title="statement not covered" >            v-model</span>="email"
+            label="email"
+            :error-messages="emailValidateError"
+<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ></span>          /&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;v-text-field<span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >            v-mo</span>del="password"
+            :error-messages="passwordValidationError"
+            :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            :type="showPassword ? 'text' : 'password'"</span>
+            label="password"
+            @click:append-inner="showPassword = !showPassword"
+          /&gt;
+<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ></span>          &lt;v-btn class="w-100 my-3" @click="signupWithGoogle"</span>
+<span class="cstat-no" title="statement not covered" >            &gt;Continu</span>e with google&lt;/v-btn
+          &gt;
+          &lt;v-btn
+  <span class="missing-if-branch" title="else path not taken" >E</span>          type="submit"
+            blo<span class="cstat-no" title="statement not covered" >ck</span>
+<span class="cstat-no" title="statement not covered" >            class="<span class="cstat-no" title="statement not covered" >mt-2"<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >            @click="signupWithEmail</span>Password"
+<span class="cstat-no" title="statement not covered" >            &gt;SIGN</span>UP&lt;/v-btn
+          &gt;
+        &lt;/v-sheet&gt;<span class="fstat-no" title="function not covered" ></span>
+      &lt;/v-f<span class="fstat-no" title="function not covered" >orm&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/v-card&gt;<span class="fstat-no" title="function not covered" ></span></span>
+  &lt;/di<span class="cstat-no" title="statement not covered" >v&gt;</span>
+&lt;/template&gt;
+&nbsp;
+&lt;s<span class="cstat-no" title="statement not covered" >cript setup lang="ts"&gt;<span class="fstat-no" title="function not covered" ></span></span>
+import { useF<span class="fstat-no" title="function not covered" >orm, useFi</span>eld } from "vee-validate";
+import<span class="cstat-no" title="statement not covered" > { defineEmits } from "vue";</span>
+import {<span class="cstat-no" title="statement not covered" > ref } from "vue";</span>
+import * as yup from "yup";
+<span class="cstat-no" title="statement not covered" ></span>
+const showPassword = ref&lt;boolean&gt;(false);
+const { handleSubmit } = useForm();
+const { value<span class="fstat-no" title="function not covered" >: email, </span>errorMessage: emailValidateError } = useField&lt;string&gt;(
+  "ema<span class="cstat-no" title="statement not covered" >il",</span>
+  yup.st<span class="cstat-no" title="statement not covered" >ring().email().required()</span>
+);
+const { <span class="cstat-no" title="statement not covered" >value: pass</span>word, errorMessage: passwordValidationError } =
+  useField&lt;string&gt;("password", yup.string().required());
+&nbsp;
+async functio<span class="fstat-no" title="function not covered" >n sig</span>nupWithEmailPassword(email: string, password: string) {
+  cons<span class="cstat-no" title="statement not covered" >ole.log("sign up with email, password");</span>
+}
+<span class="cstat-no" title="statement not covered" ></span>
+async function signupWithGoogle() {
+  console.log("sign up with google");
+}<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+const onSubmit = handleSubmit(
+  (result: a<span class="fstat-no" title="function not covered" >ny</span>) =&gt; {
+    cons<span class="cstat-no" title="statement not covered" >ole.log(result<span class="cstat-no" title="statement not covered" >);</span></span>
+    emit<span class="cstat-no" title="statement not covered" >("loginWithEm</span>ailPassword", {
+      email: email.value,
+      password: password.value,
+    });
+  },
+  (result) =&gt; console.log(result)
+);
+const emit = defineEmits&lt;{
+  (e: "loginWithGoogle"): void;
+<span class="cstat-no" title="statement not covered" >  (</span>
+    e: "loginWithEmailPassword",
+    { email, password }: { email: string; password: string }
+  ): void;
+}&gt;();<span class="fstat-no" title="function not covered" ></span>
+&lt;/sc<span class="cstat-no" title="statement not covered" >ript&gt;</span>
+&nbsp;
+&lt;style scop<span class="fstat-no" title="function not covered" >ed&gt;&lt;/</span>style&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2023-05-06T01:09:16.203Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
