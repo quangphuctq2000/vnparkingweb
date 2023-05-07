@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer class="px-0 pt-0">
+  <v-navigation-drawer class="px-0 pt-0 bg-blue-grey-lighten-5">
     <v-list class="pt-0">
       <v-list-item
         title="Parking Station"

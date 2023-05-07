@@ -3,6 +3,7 @@ import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import SignupView from "@/views/SignupView.vue";
 import ProfileView from "@/views/ProfileView.vue";
+import NoPermisionView from "@/views/NoPermissionView.vue";
 import ParkingStationsView from "@/views/parking-stations/ParkingStationsView.vue";
 import { getCurrentUser } from "vuefire";
 
@@ -38,6 +39,10 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
           authentication: true,
         },
+      },
+      {
+        path: "/no-permission",
+        component: NoPermisionView,
       },
     ],
   },

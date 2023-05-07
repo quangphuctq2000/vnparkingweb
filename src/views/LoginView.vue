@@ -33,13 +33,14 @@
 
 <script setup lang="ts">
 import { useForm, useField } from "vee-validate";
-import { defineEmits } from "vue";
 import { ref } from "vue";
 import * as yup from "yup";
 import { useRouter } from "vue-router";
 import * as firebase from "@/ultis/firebase";
 import { useToast } from "vue-toastification";
 import { useAppStore } from "@/store";
+import { auth } from "@/ultis/vueFire";
+import { authWithGoogle, login } from "@/ultis/api/auth";
 
 const toast = useToast();
 const router = useRouter();
@@ -57,8 +58,16 @@ const onSubmit = handleSubmit(
     try {
       appStore.openLoading();
       await firebase.loginWithEmailPassword(result.email, result.password);
+      const accessToken = await auth.currentUser?.getIdToken();
+      if (!accessToken) throw new Error();
+      const loginResult = await login(accessToken);
+      console.log(loginResult);
+
+      if (loginResult.status !== 200 || !loginResult.data) throw new Error();
+      router.push({ path: "/" });
     } catch (error) {
       console.log(error);
+      toast.error("login error");
     }
     appStore.closeLoading();
   },
@@ -69,9 +78,13 @@ async function loginWithGoogle() {
   appStore.openLoading();
   try {
     await firebase.continueWithGoogle();
+    const token = await auth.currentUser?.getIdToken();
+    if (!token) throw new Error();
+    const authWithGoogleResult = await authWithGoogle(token);
+    if (authWithGoogleResult.status !== 200 || !authWithGoogleResult.data)
+      throw new Error();
     router.push({ path: "/" });
   } catch (error) {
-    console.log(error);
     toast.error("login error");
   }
   appStore.closeLoading();

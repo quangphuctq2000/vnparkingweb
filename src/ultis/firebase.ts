@@ -3,6 +3,8 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   createUserWithEmailAndPassword,
+  User,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "./vueFire";
 
@@ -15,8 +17,6 @@ export function loginWithEmailPassword(email: string, password: string) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
-export async function signUpWithEmailPassword(email: string, password: string) {
+export function signUpWithEmailPassword(email: string, password: string) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
-
-// export async function getUserProfile() {}
