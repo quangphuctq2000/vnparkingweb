@@ -29,6 +29,6 @@ axiosInstance.interceptors.request.use(
   },
   function (error) {
     // router.push({path:"/error"});
-    throw new Error();
+    throw error;
   }
 );

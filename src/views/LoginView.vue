@@ -63,7 +63,8 @@ const onSubmit = handleSubmit(
       const loginResult = await login(accessToken);
       console.log(loginResult);
 
-      if (loginResult.status !== 200 || !loginResult.data) throw new Error();
+      if (loginResult.status !== 200 || loginResult.data.status)
+        throw new Error();
       router.push({ path: "/" });
     } catch (error) {
       console.log(error);
@@ -81,7 +82,7 @@ async function loginWithGoogle() {
     const token = await auth.currentUser?.getIdToken();
     if (!token) throw new Error();
     const authWithGoogleResult = await authWithGoogle(token);
-    if (authWithGoogleResult.status !== 200 || !authWithGoogleResult.data)
+    if (authWithGoogleResult.status !== 200 || authWithGoogleResult.data.status)
       throw new Error();
     router.push({ path: "/" });
   } catch (error) {

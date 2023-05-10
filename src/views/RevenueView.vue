@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <div>quan ly doanh thu</div>
 </template>
 
 <script setup lang="ts"></script>

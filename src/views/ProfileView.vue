@@ -3,7 +3,7 @@
   <div class="d-flex my-5 py-5 bg-white">
     <div :style="{ width: '60%', 'margin-left': '10px' }">
       <v-list-item>
-        <div class="ml-1 d-flex">Thông tin cá nhân</div>
+        <div class="ml-1 d-flex text-h6">Thông tin cá nhân</div>
       </v-list-item>
       <v-list class="mb-5">
         <v-list-item>
@@ -35,7 +35,7 @@
     <v-divider vertical></v-divider>
     <div :style="{ width: '40%', 'margin-left': '10px' }">
       <v-list-item>
-        <div class="ml-1 d-flex">Email và Password</div></v-list-item
+        <div class="ml-1 d-flex text-h6">Email và Password</div></v-list-item
       >
       <v-list class="mb-5">
         <v-list-item>
@@ -59,7 +59,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { getCurrentUser } from "vuefire";
-import * as firebase from "@/ultis/firebase";
 import { useToast } from "vue-toastification";
 import { updateUserInfo, updateUserEmailPassword } from "@/ultis/api/auth";
 import { useAppStore } from "@/store";
@@ -75,7 +74,10 @@ const password = ref();
 async function updateUserProfile(displayName: string, phoneNumber: string) {
   appStore.openLoading();
   try {
-    await updateUserInfo(displayName, phoneNumber);
+    const result = await updateUserInfo(displayName, phoneNumber);
+    console.log(result);
+
+    if (result.status != 200 || result.data.status) throw new Error();
     toast.success("update user info success");
   } catch (error) {
     toast.error("update user profile error");
@@ -88,7 +90,15 @@ async function updateEmailPassword(email: string, password: string) {
 
   appStore.openLoading();
   try {
-    await updateUserEmailPassword(email, password);
+    const updateEmailPasswordResult = await updateUserEmailPassword(
+      email,
+      password
+    );
+    if (
+      updateEmailPasswordResult.status != 200 ||
+      updateEmailPasswordResult.data.status
+    )
+      throw new Error();
     toast.success("update user info success");
   } catch (error) {
     toast.error("update user profile error");

@@ -11,6 +11,8 @@ import { VueFire, VueFireAuth } from "vuefire";
 import { app } from "./ultis/vueFire";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
+import { VDataTable } from "vuetify/labs/VDataTable";
+import VueGoogleMaps from "@fawmi/vue-google-maps";
 import { createPinia } from "pinia";
 
 const pinia = createPinia();
@@ -28,4 +30,10 @@ export const rootApp = createApp(App)
     firebaseApp: app,
     modules: [VueFireAuth()],
   })
+  .use(VueGoogleMaps, {
+    load: {
+      key: "AIzaSyDHCQpXknRoseXEoq8vEfVfbnhtkvP3jPg",
+    },
+  })
+  .component("VDataTable", VDataTable)
   .mount("#app");

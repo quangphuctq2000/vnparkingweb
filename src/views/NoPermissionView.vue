@@ -1,5 +1,5 @@
 <template>
-  <v-icon icon="mdi-lock" size="200" class="" />
+  <v-icon icon="mdi-lock" size="200" class="" color="light-blue-darken-4" />
   <div class="text-h2 mb-10 text-light-blue-darken-4">
     Sorry, you cannot view the page
   </div>
