@@ -180,7 +180,7 @@ async function checkoutManual() {
     console.log(result);
 
     if (result.status != 200 || result.data.status) throw new Error();
-    info.value == "carInfo";
+    info.value = "carInfo";
     checkoutTime.value = result.data.checkOut;
     price.value = result.data.price;
     parkingId.value = result.data.id;
@@ -194,12 +194,13 @@ async function getPayment() {
   try {
     const result = await getPaymentInfo(paymentInfoId.value);
     if (result.status != 200 || result.data.status) throw new Error();
-    result.data = JSON.parse(result.data);
     checkoutTime.value = result.data.checkOut;
     price.value = result.data.price;
     checkoutCarNumber.value = result.data.vehicleIdentityNumber;
     info.value = "payment";
   } catch (error) {
+    console.log(error);
+
     toast.error("get payment info error");
   }
 }
