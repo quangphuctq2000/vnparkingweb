@@ -194,6 +194,7 @@ async function getPayment() {
   try {
     const result = await getPaymentInfo(paymentInfoId.value);
     if (result.status != 200 || result.data.status) throw new Error();
+    result.data = JSON.parse(result.data);
     checkoutTime.value = result.data.checkOut;
     price.value = result.data.price;
     checkoutCarNumber.value = result.data.vehicleIdentityNumber;
