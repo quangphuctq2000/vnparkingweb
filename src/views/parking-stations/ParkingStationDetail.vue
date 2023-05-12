@@ -1,5 +1,5 @@
 <template>
-  <v-btn
+  <!-- <v-btn
     class="my-5"
     text="create parking station"
     :to="{ path: '/parking-station/new' }"
@@ -43,10 +43,10 @@
         <v-btn type="submit" block class="mt-2" text="update parking station" />
       </v-sheet>
     </v-form>
-  </v-card>
+  </v-card> -->
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { useAppStore } from "@/store";
 import {
   getParkingStation,
@@ -111,6 +111,6 @@ onMounted(async () => {
   }
   console.log(parkingStation.value);
 });
-</script>
+</script> -->
 
 <style scoped></style>

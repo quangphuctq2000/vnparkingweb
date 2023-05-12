@@ -100,7 +100,7 @@ describe("app state", () => {
         plugins: [router],
       },
     });
-    router.push({ path: "/parking-stations" });
+    router.push({ path: "/parking-station" });
     await router.isReady();
     expect(wrapper.html()).toContain("parking stations page");
   });
@@ -113,6 +113,6 @@ describe("app state", () => {
     });
     router.push({ path: "/profile" });
     await router.isReady();
-    expect(wrapper.html()).toContain("profilee page");
+    expect(wrapper.html()).toContain("profile page");
   });
 });

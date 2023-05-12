@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5 ml-1 d-flex text-h5">Thông tin tài khoản</div>
-  <div class="d-flex my-5 py-5 bg-white">
+  <!-- <div class="d-flex my-5 py-5 bg-white">
     <div :style="{ width: '60%', 'margin-left': '10px' }">
       <v-list-item>
         <div class="ml-1 d-flex text-h6">Thông tin cá nhân</div>
@@ -53,10 +53,10 @@
         ></v-list-item>
       </v-list>
     </div>
-  </div>
+  </div> -->
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { getCurrentUser } from "vuefire";
 import { useToast } from "vue-toastification";
@@ -112,6 +112,6 @@ onMounted(async () => {
   phoneNumber.value = currentUser?.phoneNumber;
   email.value = currentUser?.email;
 });
-</script>
+</script> -->
 
 <style scoped></style>

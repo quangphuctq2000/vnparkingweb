@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5 ml-1 d-flex text-h5">Quản lý xe vào, ra bến</div>
-  <div class="d-flex my-5 py-5 bg-white">
+  <!-- <div class="d-flex my-5 py-5 bg-white">
     <div :style="{ width: '50%', 'margin-left': '10px' }">
       <v-list-item>
         <div class="ml-1 d-flex text-h6">Xe vào bến</div>
@@ -133,10 +133,10 @@
         </v-list-item>
       </v-list>
     </div>
-  </div>
+  </div> -->
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
 import { checkIn, checkout, checkoutSuccess } from "@/ultis/api/parking";
@@ -227,6 +227,6 @@ async function checkoutManualSuccess() {
     toast.error("checkout error");
   }
 }
-</script>
+</script> -->
 
 <style scoped lang="scss"></style>

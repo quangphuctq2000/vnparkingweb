@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ height: 500 + 'px' }">
+  <!-- <div :style="{ height: 500 + 'px' }">
     <MapView
       :open-create-parking-station="openCreateParkingStation"
       :update-lng-lat="updateLngLat"
@@ -9,10 +9,10 @@
     ref="parkingStationPropertyPopup"
     :lat="lat"
     :lng="lng"
-  ></ParkingStationProperty>
+  ></ParkingStationProperty> -->
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import MapView from "@/components/MapView.vue";
 import ParkingStationProperty from "@/views/parking-stations/CreateParkingStationProperty.vue";
 import { ref } from "vue";
@@ -41,6 +41,6 @@ function updateLngLat(_lng: number, _lat: number) {
 const parkingStationPropertyPopup = ref<InstanceType<
   typeof ParkingStationProperty
 > | null>(null);
-</script>
+</script> -->
 
 <style scoped></style>

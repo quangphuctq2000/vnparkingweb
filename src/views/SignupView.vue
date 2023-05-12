@@ -1,6 +1,6 @@
 <template>
   <div class="bg-blue-darken-4 text-h4 py-3">Welcome to VN PARKING</div>
-  <div
+  <!-- <div
     class="d-flex align-center justify-center h-screen bg-blue-grey-lighten-5 p-2"
   >
     <v-card width="600" class="bg-blue-darken-4">
@@ -29,65 +29,65 @@
         </v-sheet>
       </v-form>
     </v-card>
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">
-import { useAppStore } from "@/store";
-import { useForm, useField } from "vee-validate";
-import { ref } from "vue";
-import * as yup from "yup";
-import { useToast } from "vue-toastification";
-import * as firebase from "@/ultis/firebase";
-import { useRouter } from "vue-router";
-import { authWithGoogle, signup } from "@/ultis/api/auth";
-import { auth } from "@/ultis/vueFire";
+// import { useAppStore } from "@/store";
+// import { useForm, useField } from "vee-validate";
+// import { ref } from "vue";
+// import * as yup from "yup";
+// import { useToast } from "vue-toastification";
+// import * as firebase from "@/ultis/firebase";
+// import { useRouter } from "vue-router";
+// import { authWithGoogle, signup } from "@/ultis/api/auth";
+// import { auth } from "@/ultis/vueFire";
 
-const router = useRouter();
-const appStore = useAppStore();
-const toast = useToast();
-const showPassword = ref<boolean>(false);
-const { handleSubmit } = useForm();
-const { value: email, errorMessage: emailValidateError } = useField<string>(
-  "email",
-  yup.string().email().required()
-);
-const { value: password, errorMessage: passwordValidationError } =
-  useField<string>("password", yup.string().required());
+// const router = useRouter();
+// const appStore = useAppStore();
+// const toast = useToast();
+// const showPassword = ref<boolean>(false);
+// const { handleSubmit } = useForm();
+// const { value: email, errorMessage: emailValidateError } = useField<string>(
+//   "email",
+//   yup.string().email().required()
+// );
+// const { value: password, errorMessage: passwordValidationError } =
+//   useField<string>("password", yup.string().required());
 
-async function signupWithGoogle() {
-  appStore.openLoading();
-  try {
-    await firebase.continueWithGoogle();
-    const token = await auth.currentUser?.getIdToken();
-    if (!token) throw new Error();
-    const authWithGoogleResult = await authWithGoogle(token);
-    if (authWithGoogleResult.status !== 200 || !authWithGoogleResult.data)
-      throw new Error();
-    router.push({ path: "/" });
-  } catch (error) {
-    toast.error("login error");
-  }
-  appStore.closeLoading();
-}
+// async function signupWithGoogle() {
+//   appStore.openLoading();
+//   try {
+//     await firebase.continueWithGoogle();
+//     const token = await auth.currentUser?.getIdToken();
+//     if (!token) throw new Error();
+//     const authWithGoogleResult = await authWithGoogle(token);
+//     if (authWithGoogleResult.status !== 200 || !authWithGoogleResult.data)
+//       throw new Error();
+//     router.push({ path: "/" });
+//   } catch (error) {
+//     toast.error("login error");
+//   }
+//   appStore.closeLoading();
+// }
 
-const onSubmit = handleSubmit(
-  async (result) => {
-    appStore.openLoading();
-    try {
-      await firebase.signUpWithEmailPassword(result.email, result.password);
-      const token = await auth.currentUser?.getIdToken();
-      if (!token) throw new Error();
-      const signupResult = await signup(token);
-      if (signupResult.status !== 200 || !signupResult.data) throw new Error();
-      router.push({ path: "/" });
-    } catch (error) {
-      toast.error("signup error");
-    }
-    appStore.closeLoading();
-  },
-  (result) => console.log(result)
-);
+// const onSubmit = handleSubmit(
+//   async (result) => {
+//     appStore.openLoading();
+//     try {
+//       await firebase.signUpWithEmailPassword(result.email, result.password);
+//       const token = await auth.currentUser?.getIdToken();
+//       if (!token) throw new Error();
+//       const signupResult = await signup(token);
+//       if (signupResult.status !== 200 || !signupResult.data) throw new Error();
+//       router.push({ path: "/" });
+//     } catch (error) {
+//       toast.error("signup error");
+//     }
+//     appStore.closeLoading();
+//   },
+//   (result) => console.log(result)
+// );
 </script>
 
 <style scoped></style>
